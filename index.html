@@ -6,7 +6,7 @@
     <title>Your Secret Santa Site</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Set font to a more cartoonish style */
             margin: 0;
             padding: 0;
             background-color: #ffc0cb; /* Pink background */
@@ -25,8 +25,8 @@
             margin: 2em auto;
             padding: 2em;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px; /* Larger border-radius for a cartoonish look */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increase box shadow for a cartoonish effect */
             position: relative; /* Position for clouds */
             overflow: hidden; /* Hide overflow from clouds */
         }
@@ -46,20 +46,21 @@
         .cloud {
             position: absolute;
             background: transparent url('clouds.png') no-repeat; /* Replace with your cloud image */
-            width: 100px; /* Adjust the width of the cloud as needed */
-            height: 50px; /* Adjust the height of the cloud as needed */
+            width: 50px; /* Smaller clouds */
+            height: 25px; /* Smaller clouds */
             opacity: 0.6; /* Adjust the opacity as needed */
         }
 
         @keyframes cloudsMove {
-            from { transform: translateX(0); }
-            to { transform: translateX(-100%); }
+            from { transform: translateX(0) translateY(0); }
+            to { transform: translateX(-100%) translateY(100%); }
         }
 
         /* Add login form styling */
         form {
             margin-top: 20px;
             text-align: center;
+            position: relative;
         }
 
         label {
@@ -70,6 +71,7 @@
         input {
             padding: 8px;
             margin-bottom: 16px;
+            width: 100%; /* Make input fields take the full width */
         }
 
         button {
@@ -78,15 +80,14 @@
             color: #fff;
             border: none;
             cursor: pointer;
+            width: 100%; /* Make the button take the full width */
         }
     </style>
 </head>
 <body>
 
     <!-- Clouds -->
-    <div class="clouds">
-        <!-- JavaScript will add clouds dynamically here -->
-    </div>
+    <div class="clouds" id="clouds-container"></div>
 
     <header>
         <h1>Your Secret Santa Surprise</h1>
@@ -111,7 +112,7 @@
     <script>
         // Function to move clouds
         function moveClouds() {
-            const cloudsContainer = document.querySelector('.clouds');
+            const cloudsContainer = document.getElementById('clouds-container');
             const numberOfClouds = 30;
 
             for (let i = 0; i < numberOfClouds; i++) {
@@ -119,7 +120,6 @@
                 cloud.className = 'cloud';
                 cloud.style.top = Math.random() * 100 + 'vh';
                 cloud.style.left = Math.random() * 100 + 'vw';
-                cloud.style.animationDelay = Math.random() * 60 + 's'; // Random animation delay
                 cloudsContainer.appendChild(cloud);
             }
         }
