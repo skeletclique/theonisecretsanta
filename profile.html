@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theoni's Profile</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa; /* Light gray background */
+            display: flex;
+            flex-direction: row; /* Updated to row */
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #fff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            border-right: 1px solid #eee;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            margin: 5px;
+            border-bottom: 1px solid #eee;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .sidebar a:last-child {
+            border-bottom: none;
+        }
+
+        /* Profile Info Styles */
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 30px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile-username {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .profile-counts {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .profile-buttons {
+            display: flex;
+            align-items: center; /* Align buttons with text */
+            margin-bottom: 10px;
+        }
+
+        .edit-profile,
+        .view-archive {
+            padding: 10px;
+            background-color: #ccc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .bio {
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">Search</a>
+        <a href="#">Explore</a>
+        <a href="#">Reels</a>
+        <a href="#">Messages</a>
+        <a href="#">Notifications</a>
+        <a href="#">Create</a>
+        <a href="#">Profile</a>
+        <!-- Add more menu items as needed -->
+        <a href="#" class="more-btn">More</a>
+    </div>
+
+    <!-- Profile Info -->
+    <div class="profile-info">
+        <!-- Profile Image -->
+        <img class="profile-image" src="profileimage.png" alt="Profile Image">
+
+        <!-- Username -->
+        <div class="profile-username">theoni</div>
+
+        <!-- Buttons -->
+        <div class="profile-buttons">
+            <button class="edit-profile" onclick="editProfile()">Edit Profile</button>
+            <button class="view-archive" onclick="viewArchive()">View Archive</button>
+        </div>
+
+        <!-- Counts -->
+        <div class="profile-counts">21 posts • 1M followers • 3 following</div>
+
+        <!-- Bio -->
+        <p class="bio">δικηγόρος, πρώην random girl και τοπ φίλη</p>
+    </div>
+
+    <script>
+        function editProfile() {
+            // Add logic for editing profile
+            alert('Edit Profile clicked');
+        }
+
+        function viewArchive() {
+            // Add logic for viewing archive
+            alert('View Archive clicked');
+        }
+    </script>
+
+</body>
+</html>
