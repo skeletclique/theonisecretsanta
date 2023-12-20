@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #fafafa;
+        }
+
+        .background-image {
+            flex: 1;
+            background-image: url('1.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 2em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+            text-align: left;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+            color: #777;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 12px;
+            background: linear-gradient(45deg, #515BD4, #8134AF, #DD2A7B, #FEDA77, #F58529); /* Gradient mix of colors */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #3A42A8, #67298C, #B72161, #FDCD4D, #F0691D); /* Darker shade on hover */
+        }
+
+        /* Style for the new Messenger button container */
+        .messenger-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        /* Style for the Messenger button */
+        .messenger-button {
+            background: linear-gradient(45deg, #FF6968, #A334FA, #0695FF); /* Gradient mix of colors */
+            color: #fff;
+            cursor: pointer;
+            padding: 12px;
+            border: none; /* Remove the border around the button */
+            border-radius: 4px;
+            width: 50%;
+            display: flex; /* Add display flex to the button */
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+        }
+
+        .messenger-button:hover {
+            background: linear-gradient(45deg, #FF4D4C, #9B26D9, #007BFF); /* Darker shade on hover */
+        }
+
+        /* Style for the icon inside the Messenger button */
+        .messenger-button img {
+            width: 20px; /* Adjust the icon size */
+            height: auto;
+            margin-right: 8px; /* Add spacing between icon and text */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <!-- Instagram Logo -->
+        <header>
+            <img src="instagram.svg" alt="Instagram">
+        </header>
+
+        <!-- Login Form -->
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Phone number, username, or email address:</label>
+                <input type="text" id="username" name="username" placeholder="" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="" required>
+            </div>
+
+            <button type="button" onclick="authenticate()">Login</button>
+
+            <!-- New Messenger button container with text "Dimitris" -->
+            <div class="messenger-container">
+                <button class="messenger-button" onclick="sendToMessenger()">
+                    <img src="messenger.svg" alt="Messenger Icon">
+                    Dimitris
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function authenticate() {
+                const usernameInput = document.getElementById('username');
+                const passwordInput = document.getElementById('password');
+                
+                // Check if the username and password are correct
+                if (usernameInput.value.toLowerCase() === 'theoni' && passwordInput.value === 'safeplace') {
+                    // Redirect to the profile page
+                    window.location.href = 'profile.html';
+                } else {
+                    alert('Incorrect username or password. Please try again.');
+                }
+            }
+
+            // Expose the function globally
+            window.authenticate = authenticate;
+
+            // Listen for Enter key press on the password field
+            document.getElementById('password').addEventListener('keyup', function (event) {
+                if (event.key === 'Enter') {
+                    authenticate(); // Trigger authentication on Enter key press
+                }
+            });
+
+            // New function for sending to Messenger
+            function sendToMessenger() {
+                // Redirect to the Messenger URL
+                window.location.href = 'https://www.messenger.com/t/100007263281570';
+            }
+
+            // Expose the function globally
+            window.sendToMessenger = sendToMessenger;
+        });
+    </script>
+
+</body>
+</html>
