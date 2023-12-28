@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reels Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #fafafa; /* Light gray background */
+            align-items: center; /* Center items vertically */
+        }
+
+        #content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        video {
+            max-width: 100%;
+            max-height: 80vh; /* Adjust the maximum height as needed */
+            width: auto;
+            height: auto;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #fff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: flex-start;
+            border-left: 1px solid #eee;
+            border-right: 1px solid #eee;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            margin: 5px;
+            border-bottom: 1px solid #eee;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .sidebar a:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <a href="#" id="homeButton">Home</a>
+    <a href="#">Search (coming soon)</a>
+    <a href="#" id="exploreSidebarButton">Explore (coming soon)</a>
+    <a href="reels.html" id="reelsSidebarButton">Reels</a>
+    <a href="messages.html" id="messagesSidebarButton">Messages (coming soon)</a>
+    <a href="notifications.html" id="notificationsSidebarButton">Notifications (coming soon)</a>
+    <a href="#" id="profileSidebarButton">Profile</a>
+    <!-- Add more menu items as needed -->
+    <a href="#" class="more-btn" id="logoutButton">Logout</a>
+</div>
+
+<div id="content">
+    <video controls autoplay muted>
+        <source src="reels/video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<script>
+    // Add an event listener to the "Home" button
+    document.getElementById("homeButton").addEventListener("click", function () {
+        // Navigate to home.html when the button is clicked
+        window.location.href = "home.html";
+    });
+
+    // Add an event listener to the sidebar "Explore" button
+    document.getElementById("exploreSidebarButton").addEventListener("click", function() {
+        // Navigate to explore.html when the button is clicked
+        window.location.href = "explore.html";
+    });
+
+    // Add an event listener to the sidebar "Messages" button
+    document.getElementById("messagesSidebarButton").addEventListener("click", function() {
+        // Navigate to messages.html when the button is clicked
+        window.location.href = "messages.html";
+    });
+
+    // Add an event listener to the sidebar "Notifications" button
+    document.getElementById("notificationsSidebarButton").addEventListener("click", function() {
+        // Navigate to notifications.html when the button is clicked
+        window.location.href = "notifications.html";
+    });
+
+    // Add an event listener to the "Logout" button (formerly "More" button)
+    document.getElementById("logoutButton").addEventListener("click", function() {
+        // Navigate to index.html when the button is clicked
+        window.location.href = "index.html";
+    });
+// Add an event listener to the "Profile" button
+document.getElementById("profileSidebarButton").addEventListener("click", function() {
+    // Navigate to profile.html when the button is clicked
+    window.location.href = "profile.html";
+});
+</script>
+
+</body>
+</html>
